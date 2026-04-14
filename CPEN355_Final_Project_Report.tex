@@ -1,0 +1,174 @@
+\documentclass{article}
+
+% =========================
+% NeurIPS 2026 template
+% Keep formatting unchanged
+% =========================
+\usepackage[final]{neurips_2026}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{enumitem}
+
+\title{Human Activity Recognition Using Wearable Sensor Data: A Comparative Study on the PAMAP2 Dataset}
+
+\author{%
+  Yash Bhardwaj \\
+  96613781 \\
+  Department of Electrical and Computer Engineering\\
+  The University of British Columbia\\
+  \texttt{student1@ubc.ca}
+  \And
+  Takunda Nyamupa \\
+  74805003 \\
+  Department of Electrical and Computer Engineering\\
+  The University of British Columbia\\
+  \texttt{nyamupat@ubc.ca}
+  \And
+  Tara Rouhbakhsh \\
+  97245385 \\
+  Department of Electrical and Computer Engineering\\
+  The University of British Columbia\\
+  \texttt{student3@ubc.ca}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Human activity recognition (HAR) using wearable sensors is important for applications such as fitness tracking and healthcare monitoring. In this project, we classify physical activities using the PAMAP2 dataset, which contains IMU and heart rate data. We build a machine learning pipeline with data preprocessing and sliding-window segmentation, and compare a 1D convolutional neural network (1D-CNN) with a Random Forest classifier. The 1D-CNN learns features directly from raw sensor data, while the Random Forest uses engineered features as a baseline. The Random Forest achieves an accuracy of X\% and an F1-score of Y, outperforming the 1D-CNN by Z\%. These results suggest that, for this task, engineered features combined with classical machine learning can outperform deep learning approaches, while also offering advantages in interpretability and computational efficiency.
+\end{abstract}
+
+\section{Introduction}
+
+\subsection{Motivation}
+Human Activity Recognition (HAR) as become an important area in modern engineering due to the rapid growth of wearable technology. Devices such as smartwatches are equipped with sensors such as Inertial Measurement Units (IMUs) and heart rate monitors that enable the con
+
+\subsection{Problem Definition}
+We formulate this problem as a [classification/regression/segmentation/retrieval/etc.] task. Let the input be $x \in \mathcal{X}$ and the target output be $y \in \mathcal{Y}$. Given a dataset
+\[
+\mathcal{D} = \{(x_i, y_i)\}_{i=1}^{N},
+\]
+the goal is to learn a function $f_\theta: \mathcal{X} \rightarrow \mathcal{Y}$ that minimizes prediction error on unseen test samples.
+
+\subsection{Contributions}
+The main contributions of this project are:
+\begin{enumerate}[leftmargin=18pt]
+    \item We built a complete machine learning pipeline for [problem].
+    \item We implemented and compared at least two models: [Model A] and [Model B].
+    \item We analyzed performance trade-offs using [metrics], and identified the best-performing approach.
+\end{enumerate}
+
+\section{Method}
+
+\subsection{Overall Framework}
+Our pipeline consists of four stages: data collection and preprocessing, feature extraction or representation learning, model training, and final evaluation.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\linewidth]{figures/pipeline.png}
+    \caption{Overall framework of the proposed machine learning pipeline. The system includes data preprocessing, feature extraction, model training, and prediction/evaluation.}
+    \label{fig:pipeline}
+\end{figure}
+
+Figure~\ref{fig:pipeline} illustrates the full methodology required by the project rubric.
+
+\subsection{Data Preprocessing and Feature Engineering}
+We preprocess the dataset by [normalization / tokenization / resizing / missing-value handling / label encoding / train-test split]. Additional feature engineering steps include [PCA / handcrafted features / augmentation / windowing / embeddings], chosen to improve robustness and predictive performance.
+
+\subsection{Model 1: [Baseline Model Name]}
+Our first model is [e.g., Logistic Regression / Random Forest / CNN / LSTM]. Given input $x$, the model predicts
+\[
+\hat{y} = f_{\theta}(x).
+\]
+The training objective is to minimize [cross-entropy / mean squared error / Dice loss / contrastive loss]:
+\[
+\mathcal{L}(\theta) = \frac{1}{N}\sum_{i=1}^{N}\ell(f_\theta(x_i), y_i).
+\]
+Explain any key variables, architecture details, and optimization choices here.
+
+\subsection{Model 2: [Second Model Name]}
+The second model is [e.g., SVM / XGBoost / ResNet / Transformer], selected to provide a stronger or structurally different comparison. Its training objective is
+\[
+\mathcal{L}(\phi) = \frac{1}{N}\sum_{i=1}^{N}\ell(g_\phi(x_i), y_i).
+\]
+Describe why this model may perform better or differently than the baseline.
+
+\subsection{Design Choices}
+Our design choices were motivated by the properties of the dataset and engineering constraints. For example:
+\begin{itemize}
+    \item [Choice 1] was used because [reason].
+    \item [Choice 2] improved [accuracy / generalization / inference speed].
+    \item [Choice 3] reduced overfitting or computational cost.
+\end{itemize}
+
+\section{Experiment}
+
+\subsection{Experimental Setup}
+We evaluated our models on [dataset name], which contains [number] samples and [brief dataset statistics]. The data was split into training, validation, and test sets using a [e.g., 70/15/15] ratio.
+
+All experiments were run using:
+\begin{itemize}
+    \item Hardware: [CPU/GPU, RAM]
+    \item Software: Python [version], PyTorch / TensorFlow / scikit-learn [version]
+    \item Key hyperparameters: learning rate = [value], batch size = [value], epochs = [value]
+\end{itemize}
+
+\subsection{Evaluation Metrics}
+We report [Accuracy, Precision, Recall, F1-score] for classification tasks, or [RMSE, MAE, $R^2$] for regression tasks. These metrics were chosen because [reason].
+
+\subsection{Model Comparison and Results}
+
+\begin{table}[H]
+    \centering
+    \caption{Performance comparison of different models on the test set. Higher is better for Accuracy/F1, while lower is better for RMSE.}
+    \label{tab:results}
+    \begin{tabular}{lcccc}
+        \toprule
+        Model & Accuracy & Precision & Recall & F1-score \\
+        \midrule
+        Baseline Model & 0.000 & 0.000 & 0.000 & 0.000 \\
+        Proposed Model & 0.000 & 0.000 & 0.000 & 0.000 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Table~\ref{tab:results} summarizes the comparative results of the implemented models.
+
+\subsection{Analysis and Justification}
+The proposed model outperformed the baseline in [metric(s)] because [reason]. However, the baseline may still be preferable in settings where [speed / interpretability / simplicity] is more important.
+
+We selected [best model] as the final model because it achieved the strongest balance between [performance], [robustness], and [computational efficiency].
+
+\subsection{Error Analysis}
+We observed that the model makes mistakes primarily in cases involving [class imbalance / noisy samples / ambiguous labels / out-of-distribution examples]. This suggests that future improvements could focus on [better preprocessing / more data / improved architecture / calibration].
+
+\section{Conclusion}
+In this project, we developed and evaluated a machine learning system for [problem]. We compared [Model A] and [Model B] using [metrics] on [dataset], and found that [best model] achieved the best performance with [main result].
+
+Despite these promising results, our approach has limitations, including [limited data / computational constraints / model complexity / generalization concerns]. In future work, we would explore [additional models, larger datasets, hyperparameter tuning, deployment improvements, or better feature engineering].
+
+\section*{Distribution of Work}
+\textbf{Student Name 1:} [Describe contributions such as preprocessing, baseline implementation, experiments, report writing.]
+
+\textbf{Student Name 2:} [Describe contributions such as model development, tuning, analysis, figure generation, report editing.]
+
+% If solo:
+% This project was completed individually.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
