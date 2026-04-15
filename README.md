@@ -6,6 +6,8 @@ First clone the repository
 Then change directory into the repository
 %cd /content/CPEN355_FinalProject/
 
+Plots can be found in training folder in the CNN and Random Forest folders, but the following instructions can be used to obtain the plots
+
 To run the Random Forest model and obtain the loss plot, confusion matrix, and F1 scores, use:
 !jupyter nbconvert --to notebook --execute training/random_forest/random_forest.ipynb
 
