@@ -6,7 +6,8 @@ First clone the repository
 Then change directory into the repository
 %cd /content/CPEN355_FinalProject/
 
-To run the Random Forest model and obtain the plots and matrices, use:
+To run the Random Forest model and obtain the loss plot, confusion matrix, and F1 scores, use:
 %cd /content/CPEN355_FinalProject/
 
-To run the CNN model, use:
+To run the CNN models and obtain the loss plot, confusion matrix, and F1 scores, use:
+!jupyter nbconvert --to notebook --execute training/cnn/model_eval.ipynb
